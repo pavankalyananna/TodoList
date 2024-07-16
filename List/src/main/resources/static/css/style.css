@@ -1,0 +1,99 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+form{
+	padding:20px;
+}
+body {
+  margin: 0 auto;
+  text-align: center;
+}
+textarea, input[type="text"] {
+  height: 30px; /* or any other height you prefer */
+  width: 300px; /* or any other width you prefer */
+}
+
+li:last-child {
+    border-bottom: none;
+}
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* light gray background */
+            background-image: url(''); /* replace with your image URL */
+ 			 background-size: cover; /* scale the image to cover the entire body */
+ 			 background-repeat: no-repeat;
+        }
+        
+        h1 {
+            color: #333; /* dark gray text */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc; /* light gray border */
+        }
+        
+       
+        
+        a {
+            text-decoration: none;
+            color: #337ab7; /* blue link color */
+        }
+        /* style.css */
+table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: 0 auto;
+     float: center;
+ 	 margin: 50px;
+ 	  font-size: 26px;
+    
+}
+ #mark {
+        background-color: #90ee90;
+ }
+ #remove{
+ background-color:rgb(242, 109, 116);
+ }
+ #move{
+ background-color:#f0e67a
+ }
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+td {
+    text-align: left;
+}
+
+td button {
+    margin: 10px;
+}
+        
+        

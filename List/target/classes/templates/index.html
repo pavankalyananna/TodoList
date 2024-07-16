@@ -1,0 +1,71 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>To-Do List App</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+        .left-half, .right-half {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>To-Do List</h1>
+    <div class="actions">
+        <form th:action="@{/addTask}" method="post" >
+            <input type="text" name="task" id="task" placeholder="Enter task" autofocus>
+            <button type="submit">Add Task</button>
+        </form>
+        <form th:action="@{/reset}" method="post" >
+            <button type="submit">Reset</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="left-half">
+            <table>
+                <caption><h2>Pending Tasks</h2></caption>
+                <tr> <th>Task</th> <th>Status</th> <th>Remove</th> </tr>
+                <tr th:each="task : ${tasks}">
+                    <td th:text="${task}"></td>
+                    <td>
+                        <form th:action="@{/markTaskAsCompleted}" method="post">
+                            <input type="hidden" name="task" th:value="${task}">
+                            <button type="submit" id="mark">Mark as Completed</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form th:action="@{/removeTask}" method="post">
+                            <input type="hidden" name="task" th:value="${task}">
+                            <button type="submit" id="remove">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="right-half">
+            <table>
+                <caption><h2>Finished Tasks</h2></caption>
+                <tr> <th>Task</th> <th>Status</th><th>Update</th> </tr>
+                <tr th:each="task : ${CompletedTasks}">
+                    <td th:text="${task}"></td>
+                    <td> Completed</td> 
+                    <td>
+                        <form th:action="@{/MoveToPending}" method="post">
+                            <input type="hidden" name="task" th:value="${task}">
+                            <button type="submit" id="move">Move to Pending</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>
